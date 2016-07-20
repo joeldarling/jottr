@@ -1,4 +1,4 @@
-var app = angular.module('suddendeath', ['ui.router']);
+var app = angular.module('suddendeath', ['ui.router','angular-clipboard']);
 
 app.config(function ($urlRouterProvider, $locationProvider) {
 

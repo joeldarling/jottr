@@ -1,6 +1,4 @@
-
-
-app.controller('HomeCtrl', function($scope, $interval){
+app.controller('HomeCtrl', function($scope, $interval, clipboard){
 
   $scope.timer = 10;
   $scope.data = {savedLines: []};
@@ -23,6 +21,11 @@ app.controller('HomeCtrl', function($scope, $interval){
       $scope.data.text = undefined;
     }
 
+  };
+
+  //set up clipboard
+  $scope.copyToClipboard = function(){
+    clipboard.copyText($scope.data.text);
   };
 
   //set up the word stats

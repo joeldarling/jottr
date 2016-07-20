@@ -1,0 +1,17 @@
+{
+  "name": "suddendeath",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Joel <joel.darling@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/joeldarling/suddendeath",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

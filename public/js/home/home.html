@@ -1,4 +1,4 @@
-<!--
+<!-- 
 <div class="progress-wrapper">
 <div class="progress">{{ timer }} </div>
 <round-progress
@@ -17,7 +17,7 @@
 
 </div> -->
 {{ timer }}
-<md-progress-linear md-mode="determinate" value="{{ progress }}"></md-progress-linear>
+<md-progress-linear class="md-accent" md-mode="determinate" value="{{ progress }}"></md-progress-linear>
 <md-input-container class="md-block" >
        <label>Type something</label>
        <textarea ng-disabled="timer < 1" id="writer-input" ng-keypress="changed($event)" ng-model="data.text" rows="5" md-select-on-focus></textarea>
@@ -26,6 +26,6 @@
 <p> {{ stats }}</p>
 <p> {{ player_two }}</p>
 
-<md-button ng-click="copyToClipboard()" ng-show="data.savedLines.length > 0"> You can save your work! </md-button>
+<md-button class="md-accent" ng-click="copyToClipboard()" ng-show="data.savedLines.length > 0"> You can save your work! </md-button>
 
 <p ng-repeat="line in data.savedLines"> {{ line }} </p>

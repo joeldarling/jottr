@@ -19,7 +19,7 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard){
 
     $scope.timer = 10;
 
-    if($scope.stats.words > 10 && $event.keyCode == '13' && $event.shiftKey){
+    if($scope.stats.words > 9 && $event.keyCode == '13' && $event.shiftKey){
       $scope.data.savedLines.push($scope.data.text);
       $scope.data.text = undefined;
     }
@@ -30,7 +30,8 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard){
 
   //set up clipboard
   $scope.copyToClipboard = function(){
-    clipboard.copyText($scope.data.text);
+
+    clipboard.copyText($scope.data.savedLines.join('\n'));
   };
 
   //set up the word stats

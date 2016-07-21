@@ -5,6 +5,6 @@
 <p> {{ stats }}</p>
 <p> {{ player_two }}</p>
 
-<button ng-click="copyToClipboard()" ng-show="stats.words > 10"> You can save your work! </button>
+<button ng-click="copyToClipboard()" ng-show="data.savedLines.length > 0"> You can save your work! </button>
 
 <p ng-repeat="line in data.savedLines"> {{ line }} </p>

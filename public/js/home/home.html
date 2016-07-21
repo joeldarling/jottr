@@ -1,7 +1,28 @@
+<!--
+<div class="progress-wrapper">
+<div class="progress">{{ timer }} </div>
+<round-progress
+    max=20
+    current="timer"
+    color="#45ccce"
+    bgcolor="#eaeaea"
+    radius="50"
+    stroke="4"
+    rounded="true"
+    clockwise="false"
+    responsive="false"
+    duration="200"
+    animation="easeInOutQuart"
+    ></round-progress>
 
-<p> Time Left {{ timer }}</p>
+</div> -->
+{{ timer }}
+<md-progress-linear md-mode="determinate" value="{{ progress }}"></md-progress-linear>
+<md-input-container class="md-block" >
+       <label>Type something</label>
+       <textarea ng-disabled="timer < 1" id="writer-input" ng-keypress="changed($event)" ng-model="data.text" rows="5" md-select-on-focus></textarea>
+</md-input-container>
 
-<textarea  ng-disabled="timer < 1"id="writer-input" ng-keypress="changed($event)" placeholder="typesomething" ng-model="data.text"> </textarea>
 <p> {{ stats }}</p>
 <p> {{ player_two }}</p>
 

@@ -18,6 +18,8 @@ server.listen(3000, function(){
 
 /// SETUP STATIC ROUTES ///
 app.use('/js', express.static(path.join(__dirname, '../public/js')));
+app.use('/css', express.static(path.join(__dirname, '../public/css')));
+
 app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
 app.use('/bower_components', express.static(path.join(__dirname, '../bower_components')));
 

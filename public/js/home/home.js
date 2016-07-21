@@ -37,6 +37,7 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard){
   //set up the word stats
   Countable.live(document.getElementById('writer-input'), function (counter) {
     $scope.stats = counter;
+    $scope.progress = (counter.words / 10) * 100;
   });
 
 });

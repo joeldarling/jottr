@@ -4,6 +4,9 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard){
   $scope.data = {savedLines: []};
   $scope.stats;
 
+  socket.on('player two', function(text){
+    $scope.player_two = text;
+  });
 
   var stop = $interval(function(){
     $scope.timer--;
@@ -20,6 +23,8 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard){
       $scope.data.savedLines.push($scope.data.text);
       $scope.data.text = undefined;
     }
+
+    socket.emit('user typing', {stats:$scope.stats, text: $scope.data.text});
 
   };
 

@@ -1,5 +1,8 @@
 var app = angular.module('suddendeath', ['ui.router','angular-clipboard']);
 
+var socket = io.connect();
+
+
 app.config(function ($urlRouterProvider, $locationProvider) {
 
     // This turns off hashbang urls (/#about) and changes it to something normal (/about)

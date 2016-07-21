@@ -1,8 +1,9 @@
 
 <p> Time Left {{ timer }}</p>
 
-<textarea id="writer-input" ng-keypress="changed($event)" placeholder="typesomething" ng-model="data.text"> </textarea>
-<p> {{ stats }}
+<textarea  ng-disabled="timer < 1"id="writer-input" ng-keypress="changed($event)" placeholder="typesomething" ng-model="data.text"> </textarea>
+<p> {{ stats }}</p>
+<p> {{ player_two }}</p>
 
 <button ng-click="copyToClipboard()" ng-show="stats.words > 10"> You can save your work! </button>
 

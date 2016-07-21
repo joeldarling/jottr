@@ -1,4 +1,4 @@
-var app = angular.module('suddendeath', ['ui.router','angular-clipboard']);
+var app = angular.module('suddendeath', ['ui.router','ngMaterial','angular-clipboard','angular-svg-round-progressbar']);
 
 var socket = io.connect();
 

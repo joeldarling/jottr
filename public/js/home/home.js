@@ -9,7 +9,6 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard, hotkeys){
   });
 
   //set up key commands
-
   hotkeys.add({
     combo:'shift+enter',
     allowIn: ['TEXTAREA'],
@@ -31,12 +30,8 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard, hotkeys){
 
   $scope.changed = function($event){
 
-    $scope.timer = 10;
-
-    if($scope.stats.words > 9 && $event.keyCode == '13' && $event.shiftKey){
-      $scope.data.savedLines.push($scope.data.text);
-      $scope.data.text = undefined;
-    }
+    if($event.keyCode !== '13')
+      $scope.timer = 10;
 
     socket.emit('user typing', {stats:$scope.stats, text: $scope.data.text});
 

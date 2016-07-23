@@ -1,4 +1,4 @@
-app.controller('HomeCtrl', function($scope, $interval, clipboard){
+app.controller('HomeCtrl', function($scope, $interval, clipboard, hotkeys){
 
   $scope.timer = 10;
   $scope.data = {savedLines: []};
@@ -6,6 +6,20 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard){
 
   socket.on('player two', function(text){
     $scope.player_two = text;
+  });
+
+  //set up key commands
+
+  hotkeys.add({
+    combo:'shift+enter',
+    allowIn: ['TEXTAREA'],
+    callback: function(){
+      if($scope.stats.words > 9){
+        $scope.data.savedLines.push($scope.data.text);
+        $scope.data.text = undefined;
+      }
+    }
+
   });
 
   var stop = $interval(function(){
@@ -30,7 +44,6 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard){
 
   //set up clipboard
   $scope.copyToClipboard = function(){
-
     clipboard.copyText($scope.data.savedLines.join('\n'));
   };
 

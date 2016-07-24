@@ -1,8 +1,8 @@
 app.controller('HomeCtrl', function($scope, $interval, clipboard, hotkeys){
 
-  $scope.timer = 10;
+  $scope.timer = 1000;
   $scope.data = {savedLines: []};
-  $scope.stats;
+  $scope.stats = {};
 
   socket.on('player two', function(text){
     $scope.player_two = text;
@@ -16,6 +16,7 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard, hotkeys){
       if($scope.stats.words > 9){
         $scope.data.savedLines.push($scope.data.text);
         $scope.data.text = undefined;
+        $scope.totalWords = countTotalWords($scope.data.savedLines);
       }
     }
 
@@ -49,3 +50,13 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard, hotkeys){
   });
 
 });
+
+function countTotalWords(arr){
+  var total=0;
+
+  arr.forEach(function(str){
+    total+=str.split(' ').length;
+  });
+
+  return total;
+}

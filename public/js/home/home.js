@@ -1,4 +1,4 @@
-app.controller('HomeCtrl', function($scope, $interval, clipboard, hotkeys){
+app.controller('HomeCtrl', function($scope, $rootScope, $interval, clipboard, hotkeys){
 
   $scope.timer = 1000;
   $scope.data = {savedLines: []};
@@ -24,7 +24,7 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard, hotkeys){
 
   var stop = $interval(function(){
     $scope.timer--;
-
+    $rootScope.$broadcast('timer update', $scope.timer);
     if($scope.timer === 0)
       $interval.cancel(stop);
   }, 1000);
@@ -32,9 +32,10 @@ app.controller('HomeCtrl', function($scope, $interval, clipboard, hotkeys){
   $scope.changed = function($event){
 
     if($event.keyCode !== '13')
-      $scope.timer = 10;
+      $scope.timer+=10;
 
-    socket.emit('user typing', {stats:$scope.stats, text: $scope.data.text});
+    socket.emit('user typing', { stats:$scope.stats, text: $scope.data.text });
+    $rootScope.$broadcast('user typing', { stats: $scope.stats });
 
   };
 

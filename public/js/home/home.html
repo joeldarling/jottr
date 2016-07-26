@@ -1,20 +1,24 @@
 
 
-<div layout="row" layout-margin layout-align="center center">
-  <div flex="40">
+<div layout="row" layout-margin layout-align="">
+  <div flex="25"></div>
+  <div flex="50">
     <p ng-repeat="line in data.savedLines"> {{ line }} </p>
     <md-input-container class="md-block" >
            <textarea class="main-textarea" ng-disabled="timer < 1" id="writer-input" ng-keypress="changed($event)" ng-model="data.text" rows="1" md-select-on-focus></textarea>
     </md-input-container>
-    <!-- <md-progress-linear md-mode="determinate" value="{{ progress }}"></md-progress-linear> -->
+    <div ng-show="stats.words>10">
+      <md-icon class="md-accent" md-font-set="material-icons"> playlist_add_check </md-icon>
+    </div>
+  </div>
+  <div flex="25">
+    <md-button class="" ng-click="copyToClipboard()" ng-show="data.savedLines.length > 0">
+      <md-icon md-font-set="material-icons"> content_paste </md-icon>
+      Copy
+    </md-button>
+  </div>
 
   </div>
-  <!-- <div flex="40">
-    <p> Timer: {{ timer }} </p>
-    <p> Current: {{ stats.words }}</p>
-    <p> Total: {{ totalWords }} </p>
-    {{ stats }}
-    <md-button class="md-accent" ng-click="copyToClipboard()" ng-show="data.savedLines.length > 0"> You can save your work! </md-button>
-  </div> -->
+
 
 </div>

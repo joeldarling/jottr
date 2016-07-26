@@ -11,11 +11,11 @@ app.config(function ($urlRouterProvider, $locationProvider, $mdThemingProvider, 
 
     hotkeysProvider.useNgRoute = false;
 
-    // $mdThemingProvider.theme('default')
-    //  .primaryPalette('grey')
-    //  .accentPalette('teal', {
-    //    default:'A400'
-    //  })
+    $mdThemingProvider.theme('default')
+     .primaryPalette('grey')
+     .accentPalette('teal', {
+       default:'A400'
+     })
     //  .dark();
 });
 

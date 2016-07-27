@@ -11,8 +11,10 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
-  min-height: 70px;
+  z-index:100;
 }
 .main-textarea{
-  font-size: 20px;
+  font-size: 18px;
+  font-family: 'Taviraj', serif;
+
 }

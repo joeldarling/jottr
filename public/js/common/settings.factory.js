@@ -14,7 +14,7 @@ app.factory('Settings', function(){
       settings.time = DEFAULT_TIME;
     },
     get: function(key){
-      if(!key || settings[key])
+      if(!key || !settings[key])
         return settings;
       else
         return settings[key];

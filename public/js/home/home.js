@@ -1,6 +1,8 @@
-app.controller('HomeCtrl', function($scope, $rootScope, $interval, clipboard, hotkeys){
+app.controller('HomeCtrl', function($scope, $rootScope, $interval, Settings, clipboard, hotkeys){
 
-  $scope.timer = 1000;
+  Settings.set('time', 1000)
+  $scope.timer = Settings.get('time');
+
   $scope.data = {savedLines: []};
   $scope.stats = {};
 
@@ -13,7 +15,7 @@ app.controller('HomeCtrl', function($scope, $rootScope, $interval, clipboard, ho
     combo:'shift+enter',
     allowIn: ['TEXTAREA'],
     callback: function(){
-      if($scope.stats.words > 9){
+      if($scope.stats.words > Settings.get('words')){
         $scope.data.savedLines.push($scope.data.text);
         $scope.data.text = undefined;
         $scope.totalWords = countTotalWords($scope.data.savedLines);
@@ -31,9 +33,11 @@ app.controller('HomeCtrl', function($scope, $rootScope, $interval, clipboard, ho
 
   $scope.changed = function($event){
 
-    if($event.keyCode !== '13')
+    if($event.keyCode !== '13'){
       $scope.timer+=10;
-
+      if($scope.timer>Settings.get('time'))
+        $scope.timer=Settings.get('time');
+    }
     socket.emit('user typing', { stats:$scope.stats, text: $scope.data.text });
     $rootScope.$broadcast('user typing', { stats: $scope.stats });
 

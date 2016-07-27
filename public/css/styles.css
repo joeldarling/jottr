@@ -16,5 +16,9 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 .main-textarea{
   font-size: 18px;
   font-family: 'Taviraj', serif;
+}
 
+.saved-textarea{
+  font-size: 18px;
+  font-family: 'Taviraj', serif;
 }

@@ -3,7 +3,7 @@
 <div layout="row" layout-margin layout-align="">
   <div flex="25"></div>
   <div flex="50">
-    <p ng-repeat="line in data.savedLines"> {{ line }} </p>
+    <p class="saved-textarea"ng-repeat="line in data.savedLines"> {{ line }} </p>
     <md-input-container class="md-block" >
            <textarea class="main-textarea" ng-disabled="timer < 1" id="writer-input" ng-keypress="changed($event)" ng-model="data.text" rows="1" md-select-on-focus></textarea>
     </md-input-container>
@@ -12,6 +12,7 @@
     </div>
   </div>
   <div flex="25">
+    <h2> {{ timer }} </h2>
     <md-button class="" ng-click="copyToClipboard()" ng-show="data.savedLines.length > 0">
       <md-icon md-font-set="material-icons"> content_paste </md-icon>
       Copy

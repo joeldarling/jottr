@@ -27,3 +27,8 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   font-size: 14px;
   color: #a4a4a4;
 }
+
+.logo-text {
+  font-family: 'Taviraj', serif;
+  margin-left: 20px;
+}

@@ -1,5 +1,4 @@
 
-
 <div layout="row" layout-margin layout-align="">
   <div flex="25"></div>
   <div flex="50">
@@ -8,8 +7,10 @@
            <textarea class="main-textarea" ng-disabled="timer < 1" id="writer-input" ng-keypress="changed($event)" ng-model="data.text" rows="1" md-select-on-focus></textarea>
     </md-input-container>
     <div ng-show="stats.words>10">
-      <md-icon class="md-accent" md-font-set="material-icons"> playlist_add_check </md-icon>
+      <md-icon class="md-primary" md-font-set="material-icons"> playlist_add_check </md-icon>
+      <span class="shortcut-text">Shift + Enter to commit</span>
     </div>
+
   </div>
   <div flex="25">
     <h2> {{ timer }} </h2>

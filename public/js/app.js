@@ -15,14 +15,13 @@ app.config(function ($urlRouterProvider, $locationProvider, $mdThemingProvider, 
      .primaryPalette('grey')
      .accentPalette('teal', {
        default:'A400'
-     })
-    //  .dark();
+     });
 });
 
 app.config(function ($stateProvider) {
-    $stateProvider.state('home', {
-        url: '/',
-        templateUrl: '/js/home/home.html',
-        controller: 'HomeCtrl'
+    $stateProvider.state('write', {
+        url: '/write',
+        templateUrl: '/js/write/write.html',
+        controller: 'WriteCtrl'
     });
 });

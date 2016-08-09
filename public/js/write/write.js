@@ -1,6 +1,6 @@
-app.controller('HomeCtrl', function($scope, $rootScope, $interval, Settings, clipboard, hotkeys){
+app.controller('WriteCtrl', function($scope, $rootScope, $interval, Settings, clipboard, hotkeys){
 
-  Settings.set('time', 1000)
+  Settings.set('time', 30);
   $scope.timer = Settings.get('time');
 
   $scope.data = {savedLines: []};

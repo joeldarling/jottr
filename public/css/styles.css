@@ -22,3 +22,8 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   font-size: 18px;
   font-family: 'Taviraj', serif;
 }
+
+.shortcut-text {
+  font-size: 14px;
+  color: #a4a4a4;
+}

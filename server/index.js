@@ -6,14 +6,14 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-
+var PORT = process.env.PORT || 3000;
 /// SETUP MIDDLEWARE ///
 app.use(bodyParser.json()); // for parsing application/json
 
 
 /// START SERVER ///
-server.listen(3000, function(){
-  console.log('server started on port 3000');
+server.listen(PORT, function(){
+  console.log('server started on port '+ PORT);
 });
 
 /// SETUP STATIC ROUTES ///

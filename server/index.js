@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
-
+var morgan = require('morgan');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
@@ -9,7 +9,7 @@ var io = require('socket.io')(server);
 var PORT = process.env.PORT || 3000;
 /// SETUP MIDDLEWARE ///
 app.use(bodyParser.json()); // for parsing application/json
-
+app.use(morgan('dev'));
 
 /// START SERVER ///
 server.listen(PORT, function(){

@@ -14,15 +14,16 @@
   </head>
 
   <body ng-app="suddendeath" ng-cloak>
+
     <md-nav-bar md-selected-nav-item="currentNavItem">
-      <p class="logo-text"> suddendeath <span class="shortcut-text">[beta]</span></p>
+      <p class="logo-text"> suddendeath<span class="shortcut-text">[beta]</span></p>
     </md-nav-bar>
 
     <md-content flex layout="column">
       <ui-view></ui-view>
     </md-content>
-    <footer></footer>
 
+    <footer></footer>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/node_modules/angular/angular.min.js" type="text/javascript" defer></script>
@@ -34,8 +35,7 @@
     <script src="/node_modules/angular-svg-round-progressbar/build/roundProgress.min.js" defer></script>
     <script src="/node_modules/angular-hotkeys/build/hotkeys.min.js" defer></script>
 
-
-    <script src="/bower_components/Countable/Countable.js" type="text/javascript" defer></script>
+    <script src="/bower_components/Countable/Countable.js" type="text/javascript" defer></script> -->
 
     <script src="/js/app.js" type="text/javascript" defer></script>
     <script src="/js/common/settings.factory.js" type="text/javascript" defer></script>
@@ -43,7 +43,9 @@
 
     <script src="/js/write/write.js" type="text/javascript" defer></script>
     <script src="/js/new/new.js" type="text/javascript" defer></script>
+
     <script src="/js/footer/footer.js" type="text/javascript" defer></script>
+    <script src="js/vendor.bundle.js" defer></script>
 
   </body>
 

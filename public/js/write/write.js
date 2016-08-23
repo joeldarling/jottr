@@ -4,6 +4,9 @@
 app.config(function ($stateProvider) {
     $stateProvider.state('write', {
         url: '/write',
+        params:{
+          mode: 'countdown'
+        },
         templateUrl: '/js/write/write.html',
         controller: 'WriteCtrl'
     });
@@ -12,7 +15,7 @@ app.config(function ($stateProvider) {
 /**
  * Write Controller
  */
-app.controller('WriteCtrl', function($scope, $rootScope, $interval, Settings, clipboard, hotkeys){
+app.controller('WriteCtrl', function($scope, $rootScope, $interval, $stateParams, Settings, clipboard, hotkeys){
 
   Settings.set('time', 30);
   $scope.timer = Settings.get('time');
@@ -23,7 +26,7 @@ app.controller('WriteCtrl', function($scope, $rootScope, $interval, Settings, cl
   socket.on('player two', function(text){
     $scope.player_two = text;
   });
-
+  console.log($stateParams);
   //set up key commands
   hotkeys.add({
     combo:'shift+enter',

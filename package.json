@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index",
+    "build-css": "node-sass -w public/assets/styles/ -o public/css/styles",
     "start-dev": "nodemon server/index",
     "postinstall": "bower install"
   },
@@ -28,5 +29,8 @@
     "mongoose": "^4.5.5",
     "path": "^0.12.7",
     "socket.io": "^1.4.8"
+  },
+  "devDependencies": {
+    "node-sass": "^3.8.0"
   }
 }

@@ -1,10 +1,8 @@
-body{
-  font-family: 'Taviraj', serif;
+body {
+  font-family: 'Taviraj', serif; }
 
-}
 md-input-container:not(.md-input-invalid).md-input-focused .md-input {
-    border-color: rgba(0, 0, 0, 0);
-}
+  border-color: transparent; }
 
 .footer {
   position: fixed;
@@ -14,48 +12,43 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
-  z-index:100;
-}
-.main-textarea{
-  font-size: 18px;
-  font-family: 'Taviraj', serif;
-}
+  z-index: 100; }
 
-.saved-textarea{
+.main-textarea {
   font-size: 18px;
-  font-family: 'Taviraj', serif;
-}
+  font-family: 'Taviraj', serif; }
+
+.saved-textarea {
+  font-size: 18px;
+  font-family: 'Taviraj', serif; }
 
 .shortcut-text {
   font-size: 14px;
-  color: #a4a4a4;
-}
+  color: #a4a4a4; }
 
 .logo-text {
   font-family: 'Taviraj', serif;
-  margin-left: 20px;
-}
+  margin-left: 20px; }
 
-.page-title{
+.page-title {
   text-align: center;
   font-weight: 200;
-  font-size: 2.5rem;
-}
+  font-size: 2.5rem; }
 
-.section-title{
+.section-title {
   text-align: center;
-  font-weight: 200;
-}
+  font-weight: 200; }
+
 .section {
   background-color: #efefef;
   border-radius: 20px;
   min-height: 150px;
   transition: background .4s ease;
   outline: none;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .section:hover {
-  background-color: #e3e3e3;
+  background-color: #e3e3e3; }
 
-}
+.poop {
+  background-color: brown; }

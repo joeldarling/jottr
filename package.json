@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index",
-    "build-css": "node-sass -w public/assets/styles/ -o public/css/styles",
+    "build-css": "node-sass -w public/assets/styles/ -o public/css/",
     "start-dev": "nodemon server/index",
-    "postinstall": "bower install"
+    "postinstall": "build-css && bower install"
   },
   "author": "",
   "license": "ISC",

@@ -3,14 +3,14 @@
 <div layout="row" layout-margin layout-align="">
 
     <div flex="10"></div>
-    <div class="section" flex="40" ng-click="selectMode('deadline')">
+    <div class="section" flex="40" ng-click="selectMode('deadline')" ng-class="{'selected': mode === 'deadline'}">
       <h2 class="section-title">Deadline Mode</h2>
     </div>
-    <div class="section" flex="40" ng-click="selectMode('countown')">
-      <h2 class="section-title">Countdown Mode</h2>
+    <div class="section" flex="40" ng-click="selectMode('countdown')" ng-class="{'selected': mode === 'countdown'}">
+      <h2 class="section-title" >Countdown Mode</h2>
     </div>
     <div flex="10"></div>
 </div>
 <div layout="row" layout-margin layout-align="center">
-  <md-button class="md-raised" ui-sref="write({mode: mode})">Start</md-button>
+  <md-button class="md-raised md-warn" ui-sref="write({mode: mode})" ng-disabled="!mode">Start</md-button>
 </div>

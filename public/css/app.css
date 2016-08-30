@@ -49,3 +49,6 @@ md-input-container:not(.md-input-invalid).md-input-focused .md-input {
 
 .section:hover {
   background-color: #e3e3e3; }
+
+.selected {
+  background-color: #e3e3e3; }

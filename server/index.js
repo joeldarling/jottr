@@ -13,7 +13,7 @@ app.use(morgan('dev'));
 
 /// START SERVER ///
 server.listen(PORT, function(){
-  console.log('server started on port '+ PORT);
+  console.log('server started on port ' + PORT);
 });
 
 /// SETUP STATIC ROUTES ///

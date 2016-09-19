@@ -5,9 +5,11 @@
     <div flex="10"></div>
     <div class="section" flex="40" ng-click="selectMode('deadline')" ng-class="{'selected': mode === 'deadline'}">
       <h2 class="section-title">Deadline Mode</h2>
+      <settings ng-show="mode === 'deadline'" settings="settings.deadline"/>
     </div>
     <div class="section" flex="40" ng-click="selectMode('countdown')" ng-class="{'selected': mode === 'countdown'}">
       <h2 class="section-title" >Countdown Mode</h2>
+      <settings ng-show="mode === 'countdown'" settings="settings.countdown"/>
     </div>
     <div flex="10"></div>
 </div>

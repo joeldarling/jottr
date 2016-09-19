@@ -17,7 +17,7 @@ app.config(function ($stateProvider) {
  */
 app.controller('WriteCtrl', function($scope, $rootScope, $interval, $stateParams, Settings, clipboard, hotkeys){
 
-  Settings.set('time', 30);
+  Settings.set('time', 10);
   $scope.timer = Settings.get('time');
 
   $scope.data = {savedLines: []};
@@ -32,6 +32,7 @@ app.controller('WriteCtrl', function($scope, $rootScope, $interval, $stateParams
     combo:'shift+enter',
     allowIn: ['TEXTAREA'],
     callback: function(){
+
       if($scope.stats.words > Settings.get('words')){
         $scope.data.savedLines.push($scope.data.text);
         $scope.data.text = undefined;

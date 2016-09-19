@@ -12,8 +12,9 @@
  /**
   * New Session controller
   */
-app.controller('NewSessionCtrl', function($scope){
+app.controller('NewSessionCtrl', function($scope, Settings){
   $scope.mode = '';
+  $scope.settings = Settings.get();
 
   $scope.selectMode = function(mode){
     $scope.mode = mode;
